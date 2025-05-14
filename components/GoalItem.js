@@ -1,15 +1,15 @@
 import { StyleSheet, View, Text, Pressable } from "react-native"
 
 function GoalItem ({itemData, onDeleteItem, id}){
-    function deleteGoalHandeler{
+    const deleteGoalHandeler = () => {
         onDeleteItem(id)
         console.log('Delet Goal handeler')
     }
 
     return(
         <Pressable onPress={deleteGoalHandeler}>
-            <View style={style.goalsItem} >
-                <Text style={style.goalText}>{itemData.item.text}</Text>
+            <View style={styles.goalsItem} >
+                <Text style={styles.goalText}>{itemData.item.text}</Text>
             </View>
         </Pressable>
     )
@@ -23,10 +23,9 @@ const styles = StyleSheet.create({
         padding: 8,
         borderRadius: 6,
         background: '#8576FF',
-        color; 'white'
+        color: 'white'
     },
     goalText: {
         color: 'white'
-    }
     }
 })
